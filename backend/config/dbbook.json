@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "1",
+    "name": "Bridge of Sighs",
+    "category": "Arts and Photography",
+    "author": "Richard Russo",
+    "published_date": "2007",
+    "vote": 4.9
+  },
+  {
+    "_id": "2",
+    "name": "Viking Art",
+    "category": "Arts and Photography",
+    "author": "David Wilson",
+    "published_date": "1963",
+    "vote": 4.9
+  },
+  {
+    "_id": "3",
+    "name": "The Clan of the Cave Bear",
+    "category": "History",
+    "author": "Jean M Auel",
+    "published_date": "1980",
+    "vote": 4.9
+  },
+  {
+    "_id": "4",
+    "name": "Steve Jobs",
+    "category": "History",
+    "author": "Walter Isaacson",
+    "published_date": "2011",
+    "vote": 4.9
+  },
+  {
+    "_id": "5",
+    "name": "Final Vision",
+    "category": "Law",
+    "author": "Joe Mcginniss",
+    "published_date": "2012",
+    "vote": 4.9
+  },
+  {
+    "_id": "6",
+    "name": "The Run of His Life",
+    "category": "Law",
+    "author": "Jean M Auel",
+    "published_date": "1980",
+    "vote": 4.9
+  }
+]

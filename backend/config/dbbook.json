@@ -3,7 +3,7 @@
     "_id": "1",
     "name": "Bridge of Sighs",
     "category": "Arts and Photography",
-    "author": "Richard Russo",
+    "author": { "name": "Richard Russo", "books": [], "country": "Italian " },
     "published_date": "2007",
     "vote": 4.9
   },

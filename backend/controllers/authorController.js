@@ -20,7 +20,7 @@ const postAuthor = async (req, res) => {
     if (!req.body) {
       res.status(400).json({ msg: "Error with not input text" });
     }
-    await Author.Create({
+    await Author.create({
       books: [...req.body.books],
       name: req.body.name,
       country: req.body.country,
@@ -42,10 +42,14 @@ const deleteAuthor = async (req, res) => {
       res.status(400).json({ msg: "Undifined Author" });
     }
 
-    let dataAuthorsAfterDelete = await Author.findOneAndDelete(req.params.id, {
-      rawResult: true,
-    });
-    res.status(200).json(dataAuthorsAfterDelete);
+    const author = await Author.findById(req.params.id);
+
+    if (!author) {
+      res.status(400).json({ msg: "Category not found" });
+    }
+    await author.remove();
+    let data = await Author.find();
+    res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
@@ -59,11 +63,11 @@ const putAuthor = async (req, res) => {
     if (!req.params.id) {
       res.status(400).json({ msg: "Undefined Author" });
     }
-
+    console.log(typeof req.body.books);
     let dataAuthorsAfterUpdate = await Author.findOneAndUpdate(
       req.params.id,
       {
-        books: [...req.body.books],
+        books: req.body.books,
         name: req.body.name,
         country: req.body.country,
       },

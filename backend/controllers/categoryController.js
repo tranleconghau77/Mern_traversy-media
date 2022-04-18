@@ -45,7 +45,8 @@ const putCategory = async (req, res) => {
       {
         name: req.body.name,
       },
-      { new: true, rawResult: true }
+      { new: true }
+      //using rawResult not run
     );
     res.status(200).json(data);
   } catch (error) {

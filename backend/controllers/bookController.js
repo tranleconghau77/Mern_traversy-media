@@ -17,14 +17,7 @@ const getBooks = async (req, res) => {
 // @access  private
 const postBook = async (req, res) => {
   try {
-    if (
-      !req.body ||
-      !req.body.name ||
-      !req.body.author ||
-      !req.body.published_date ||
-      !req.body.vote ||
-      !req.body.category
-    ) {
+    if (!req.body) {
       res.status(400).json({ msg: "Error with not input text" });
     }
     await Book.create({
@@ -47,20 +40,24 @@ const postBook = async (req, res) => {
 // @access  private
 const deleteBook = async (req, res) => {
   try {
-    if (!req.params.id) {
-      res.status(400).json({ msg: "Book not found" });
-    }
+    // let book = await Book.findById(req.params.id);
+    // console.log(book);
+    // if (!book) {
+    //   res.status(400).json({ msg: "Not found this object" });
+    // }
 
-    let book = await Book.findById(req.params.id, { rawResult: true });
+    // let booksAfterDelete = await Book.findByIdAndDelete(req.params.id, {
+    //   rawResult: true,
+    // });
+    // res.status(200).json(booksAfterDelete);
 
+    const book = await Book.findById(req.params.id);
     if (!book) {
-      res.status(400).json({ msg: "Not found this object" });
+      res.status(400).json({ msg: "Category not found" });
     }
-
-    let booksAfterDelete = await Book.findByIdAndDelete(req.params.id, {
-      rawResult: true,
-    });
-    res.status(200).json(booksAfterDelete);
+    await book.remove();
+    let data = await Book.find();
+    res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ msg: error.message });
   }
@@ -83,7 +80,6 @@ const updateBook = async (req, res) => {
 
     let booksUpate = await Book.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
-      rawResult: true,
     });
     res.status(200).json(booksUpate);
   } catch (error) {

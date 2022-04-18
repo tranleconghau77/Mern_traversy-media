@@ -10,10 +10,10 @@ const bookRoute = express.Router();
 
 bookRoute.get("/books", getBooks);
 
-bookRoute.post("/books", postBook);
+bookRoute.post("/book", postBook);
 
-bookRoute.delete("/books/:id", deleteBook);
+bookRoute.delete("/book/:id", deleteBook);
 
-bookRoute.put("/books/:id", updateBook);
+bookRoute.put("/book/:id", updateBook);
 
 module.exports = bookRoute;

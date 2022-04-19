@@ -22,7 +22,7 @@ const postAuthor = async (req, res) => {
     }
     await Author.create({
       books: [...req.body.books],
-      name: req.body.name,
+      name_author: req.body.name_author,
       country: req.body.country,
     });
 
@@ -68,7 +68,7 @@ const putAuthor = async (req, res) => {
       req.params.id,
       {
         books: req.body.books,
-        name: req.body.name,
+        name_author: req.body.name_author,
         country: req.body.country,
       },
       {

@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const bookSchema = new mongoose.Schema(
   {
-    name: { type: String, required: [true, "Please type name of book"] },
+    name_book: { type: String, required: [true, "Please type name of book"] },
 
-    author: { type: mongoose.Types.ObjectId, ref: "Author" },
+    author: { type: mongoose.Schema.Types.ObjectId, ref: "Author" },
 
     published_date: { type: Date },
 

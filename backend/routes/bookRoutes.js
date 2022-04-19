@@ -1,6 +1,9 @@
 const express = require("express");
+const filter = require("../features/filter");
 const {
-  getBooks,
+  getFilterBooks,
+  getAllBooks,
+  getBook,
   deleteBook,
   updateBook,
   postBook,
@@ -8,7 +11,11 @@ const {
 
 const bookRoute = express.Router();
 
-bookRoute.get("/books", getBooks);
+bookRoute.get("/book/:id", getBook);
+
+bookRoute.get("/books", getFilterBooks);
+
+bookRoute.get("/allbooks", getAllBooks);
 
 bookRoute.post("/book", postBook);
 

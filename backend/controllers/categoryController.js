@@ -17,11 +17,11 @@ const getCategories = async (req, res) => {
 // @access  private
 const postCategory = async (req, res) => {
   try {
-    if (!req.body || !req.body.name) {
+    if (!req.body || !req.body.name_category) {
       res.status(400).json({ msg: "Error with input category" });
     }
     await Category.create({
-      name: req.body.name,
+      name_category: req.body.name_category,
     });
     let dataCategoriesAfterPost = await Category.find({ rawResult: true });
     res.status(200).json(dataCategoriesAfterPost);
@@ -43,7 +43,7 @@ const putCategory = async (req, res) => {
     let data = await Category.findByIdAndUpdate(
       req.params.id,
       {
-        name: req.body.name,
+        name_category: req.body.name_category,
       },
       { new: true }
       //using rawResult not run

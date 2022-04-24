@@ -1,34 +1,37 @@
 const Book = require("../model/bookModel");
-const db = require("../config/db");
+const createError = require("http-errors");
 
 // @desc    get a book detail
 // @route   GET /book/:id
 // @access  private
-const getBook = async (req, res) => {
+const getBook = async (req, res, next) => {
   try {
     let book = await Book.findById(req.params.id);
     res.status(200).json(book);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    get allbooks
 // @route   GET /allbooks
 // @access  private
-const getAllBooks = async (req, res) => {
+const getAllBooks = async (req, res, next) => {
   try {
     let books = await Book.find();
+    if (!books) {
+      next(createError.InternalServerError());
+    }
     res.status(200).json(books);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    get filter  books
 // @route   GET /books
 // @access  private
-const getFilterBooks = async (req, res) => {
+const getFilterBooks = async (req, res, next) => {
   try {
     let { vote, category, author } = { ...req.query };
 
@@ -70,10 +73,10 @@ const getFilterBooks = async (req, res) => {
 // @desc    post book
 // @route   POST /book
 // @access  private
-const postBook = async (req, res) => {
+const postBook = async (req, res, next) => {
   try {
     if (!req.body) {
-      res.status(400).json({ msg: "Error with not input text" });
+      next(createError.BadRequest());
     }
     await Book.create({
       name_book: req.body.name_book,
@@ -86,51 +89,40 @@ const postBook = async (req, res) => {
     let booksData = await Book.find({ rawResult: true });
     res.status(200).json(booksData);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    delete book
 // @route   DELETE /book/:id
 // @access  private
-const deleteBook = async (req, res) => {
+const deleteBook = async (req, res, next) => {
   try {
-    // let book = await Book.findById(req.params.id);
-    // console.log(book);
-    // if (!book) {
-    //   res.status(400).json({ msg: "Not found this object" });
-    // }
-
-    // let booksAfterDelete = await Book.findByIdAndDelete(req.params.id, {
-    //   rawResult: true,
-    // });
-    // res.status(200).json(booksAfterDelete);
-
     const book = await Book.findById(req.params.id);
     if (!book) {
-      res.status(400).json({ msg: "Category not found" });
+      next(createError.BadRequest());
     }
     await book.remove();
     let data = await Book.find();
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    update book
 // @route   UPDATE /book/:id
 // @access  private
-const updateBook = async (req, res) => {
+const updateBook = async (req, res, next) => {
   try {
     if (!req.params.id) {
-      res.status(400).json({ msg: "Undifined book" });
+      next(createError.BadRequest());
     }
 
     let book = await Book.findById(req.params.id);
 
     if (!book) {
-      res.status(400).json({ msg: "Not found this object" });
+      next(createError.BadRequest());
     }
 
     let booksUpate = await Book.findByIdAndUpdate(req.params.id, req.body, {
@@ -138,7 +130,7 @@ const updateBook = async (req, res) => {
     });
     res.status(200).json(booksUpate);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 

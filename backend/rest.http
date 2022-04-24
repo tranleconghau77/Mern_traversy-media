@@ -1,0 +1,21 @@
+GET http://localhost:3000/api/allbooks/
+
+
+###
+GET http://localhost:3000/api/authors
+
+###
+DELETE  http://localhost:3000/api/author
+
+
+###
+POST http://localhost:3000/api/author
+
+
+
+###
+GET http://localhost:3000/api/allbooks/abc
+
+
+
+

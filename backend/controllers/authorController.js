@@ -1,24 +1,25 @@
 const Author = require("../model/authorModel");
+const createError = require("http-errors");
 
 // @desc    get authors
 // @route   GET /authors
 // @access  private
-const getAuthors = async (req, res) => {
+const getAuthors = async (req, res, next) => {
   try {
     let authors = await Author.find();
     res.status(200).json(authors);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    post author
 // @route   POST /author
 // @access  private
-const postAuthor = async (req, res) => {
+const postAuthor = async (req, res, next) => {
   try {
     if (!req.body) {
-      res.status(400).json({ msg: "Error with not input text" });
+      next(createError.BadRequest());
     }
     await Author.create({
       books: [...req.body.books],
@@ -29,41 +30,46 @@ const postAuthor = async (req, res) => {
     let dataAuthors = await Author.find({ rawResult: true });
     res.status(200).json(dataAuthors);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    delete author
-// @route   DELETE /author
+// @route   DELETE /author/:id
 // @access  private
-const deleteAuthor = async (req, res) => {
+const deleteAuthor = async (req, res, next) => {
   try {
     if (!req.params.id) {
-      res.status(400).json({ msg: "Undifined Author" });
+      next(createError.BadRequest());
     }
 
     const author = await Author.findById(req.params.id);
 
     if (!author) {
-      res.status(400).json({ msg: "Category not found" });
+      next(createError.NotFound());
     }
     await author.remove();
     let data = await Author.find();
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    put author
-// @route   PUT /author
+// @route   PUT /author/:id
 // @access  private
-const putAuthor = async (req, res) => {
+const putAuthor = async (req, res, next) => {
   try {
     if (!req.params.id) {
-      res.status(400).json({ msg: "Undefined Author" });
+      next(createError.BadRequest());
     }
-    console.log(typeof req.body.books);
+    const author = await Author.findById(req.params.id);
+
+    if (!author) {
+      next(createError.NotFound(sadfgasd));
+    }
+
     let dataAuthorsAfterUpdate = await Author.findOneAndUpdate(
       req.params.id,
       {
@@ -77,7 +83,7 @@ const putAuthor = async (req, res) => {
     );
     res.status(200).json(dataAuthorsAfterUpdate);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 

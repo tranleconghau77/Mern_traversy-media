@@ -1,24 +1,25 @@
 const Category = require("../model/categoryModel");
+const createError = require("http-errors");
 
 // @desc    get categories
 // @route   GET /categories
 // @access  private
-const getCategories = async (req, res) => {
+const getCategories = async (req, res, next) => {
   try {
     let data = await Category.find({});
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    post book
 // @route   POST /book
 // @access  private
-const postCategory = async (req, res) => {
+const postCategory = async (req, res, next) => {
   try {
     if (!req.body || !req.body.name_category) {
-      res.status(400).json({ msg: "Error with input category" });
+      next(createError.BadRequest());
     }
     await Category.create({
       name_category: req.body.name_category,
@@ -26,19 +27,19 @@ const postCategory = async (req, res) => {
     let dataCategoriesAfterPost = await Category.find({ rawResult: true });
     res.status(200).json(dataCategoriesAfterPost);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    put category
 // @route   PUT /category/:id
 // @access  private
-const putCategory = async (req, res) => {
+const putCategory = async (req, res, next) => {
   try {
     const category = await Category.findById(req.params.id);
 
     if (!category) {
-      res.status(400).json({ msg: "Category not found" });
+      next(createError.BadRequest());
     }
     let data = await Category.findByIdAndUpdate(
       req.params.id,
@@ -50,25 +51,25 @@ const putCategory = async (req, res) => {
     );
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 
 // @desc    delete category
 // @route   DELETE /category/:id
 // @access  private
-const deleteCategory = async (req, res) => {
+const deleteCategory = async (req, res, next) => {
   try {
     const category = await Category.findById(req.params.id);
 
     if (!category) {
-      res.status(400).json({ msg: "Category not found" });
+      next(createError.BadRequest());
     }
     await category.remove();
     let data = await Category.find();
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ msg: error.message });
+    next(createError.InternalServerError());
   }
 };
 

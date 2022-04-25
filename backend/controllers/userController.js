@@ -1,4 +1,5 @@
 const User = require("../model/userModel");
+const { userValidate } = require("../helpers/validation");
 const createError = require("http-errors");
 
 // @desc    get user
@@ -7,7 +8,7 @@ const createError = require("http-errors");
 const getUser = async (req, res, next) => {
   try {
     if (!req.params.id) {
-      next(creatError.InternalServerError("Internal Server Error"));
+      next(createError.InternalServerError("Internal Server Error"));
       const user = await User.find(req.params.id);
       if (!user) {
         next(createError.BadRequest("Bad Request"));
@@ -15,7 +16,7 @@ const getUser = async (req, res, next) => {
     }
     res.status(200).json(user);
   } catch (error) {
-    next(creatError.InternalServerError("Internal Server Error"));
+    next(createError.InternalServerError("Internal Server Error"));
   }
 };
 
@@ -28,7 +29,7 @@ const getUsers = async (req, res, next) => {
     if (!users) {
       next(createError.InternalServerError("Internal Server Error"));
     }
-    res.status.json(users);
+    res.status(200).json(users);
   } catch (error) {
     next(createError.InternalServerError("Internal Server Error"));
   }
@@ -39,23 +40,31 @@ const getUsers = async (req, res, next) => {
 // @access  private
 const postUser = async (req, res, next) => {
   try {
-    if (!req.body) {
-      next(createError.BadRequest("Bad Request"));
+    const { username, password } = req.body;
+    const { error } = userValidate(req.body);
+
+    if (error) {
+      return next(createError.BadRequest(`${error.details[0].message}`));
     }
 
-    const isExistUser = await User.find(req.body.id);
-    if (isExistUser) {
-      next(createError.BadRequest("User is exist"));
+    if (!username || !password) {
+      return next(createError.BadRequest("Bad Request"));
     }
+
+    const isExistUser = await User.find({ username });
+    if (isExistUser.length !== 0) {
+      return next(createError.BadRequest("Email is exist"));
+    }
+    // console.log(username, password);
     await User.create({
-      username: req.body.username,
-      password: req.body.password,
+      username: username,
+      password: password,
     });
 
     const users = await User.find();
     res.status(200).json(users);
   } catch (error) {
-    next(createError.InternalServerError("Internal Server Error"));
+    return next(createError.InternalServerError("Internal Server Error"));
   }
 };
 
@@ -76,6 +85,7 @@ const putUser = async (req, res, next) => {
       req.params.id,
       {
         username: req.body.username,
+        password: req.body.password,
       },
       {
         new: true,
@@ -114,4 +124,35 @@ const deleteUser = async (req, res, next) => {
     next(createError.InternalServerError("Internal Server Error"));
   }
 };
-module.exports = { getUser, getUsers, putUser, postUser, deleteUser };
+
+// @desc    delete user
+// @route   DELETE /user/:id
+// @access  private
+const login = async (req, res, next) => {
+  res.status(200).json("login");
+};
+
+// @desc    delete user
+// @route   DELETE /user/:id
+// @access  private
+const logout = async (req, res, next) => {
+  res.status(200).json("logout");
+};
+
+// @desc    delete user
+// @route   DELETE /user/:id
+// @access  private
+const refreshTokenUser = async (req, res, next) => {
+  res.status(200).json("refresh token");
+};
+
+module.exports = {
+  getUser,
+  getUsers,
+  putUser,
+  postUser,
+  deleteUser,
+  login,
+  logout,
+  refreshTokenUser,
+};

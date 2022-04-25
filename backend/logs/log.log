@@ -3,3 +3,137 @@
 2022-04-24	23:18:07	 /api/authors/123123GET + The page is not found
 2022-04-24	23:27:44	 1755da2c-a201-4e69-936c-7e10ece8003c + /api/authors/123123 + GET + The page is not found
 2022-04-24	23:28:11	 1a6a3d69-21c8-4a1e-85b9-0b962f50aa14  /api/authors/123123  GET  The page is not found
+2022-04-25	14:01:47	 efbe4a83-ab3e-4eec-80c6-18a579200838  /api/user  GET  The page is not found
+2022-04-25	14:08:50	 e0c93014-136c-431c-960b-9f5c0d7ac85d  /api/user  GET  The page is not found
+2022-04-25	14:09:47	 fcc17929-36d3-46c6-87df-7c34891810aa  /api/users  GET  Internal Server Error
+2022-04-25	14:14:53	 35d30e8f-833e-4e4c-8aae-ed63ebb686d0  /api/users?use  GET  Internal Server Error
+2022-04-25	14:15:01	 3877c948-2f43-4dcb-aba8-d6ecdd0cb5af  /api/user  POST  Internal Server Error
+2022-04-25	14:16:32	 ac0f1872-fd2a-4c5a-b17d-fd9bd7853ccf  /api/user  POST  Internal Server Error
+2022-04-25	14:17:04	 54e3c51d-451f-4777-b020-938022ed961e  /api/user  POST  Internal Server Error
+2022-04-25	14:19:55	 575b92ca-7d4e-4c20-815d-13fe230da0cb  /api/user  POST  User is exist
+2022-04-25	14:20:07	 5080e8d0-6cc2-435f-89f6-51d692c24a74  /api/users  GET  Internal Server Error
+2022-04-25	14:20:36	 837b700a-3a28-40b4-bf6a-bd6193df5b71  /api/users  GET  Internal Server Error
+2022-04-25	14:20:38	 79576a2c-18f0-41f3-81c2-16bfc5df2ee8  /api/users  GET  Internal Server Error
+2022-04-25	14:22:00	 42ea8219-9472-42f2-a742-9917a60deed6  /api/user  POST  User is exist
+2022-04-25	14:47:47	 a99e930b-d08b-4318-839a-3534c5746706  /api/user  POST  Bad Request
+2022-04-25	14:48:01	 7451fc94-8bac-4d89-930a-65bbf763527e  /api/user  POST  Bad Request
+2022-04-25	14:50:14	 c18b1e0b-88df-4eb7-98b5-5cbff4cda6bd  /api/user  POST  Bad Request
+2022-04-25	14:50:53	 6cb7fc8c-014a-40ca-afec-ca89f141091f  /api/user  POST  Bad Request
+2022-04-25	14:51:10	 0a1278b2-a1d1-439b-bbc0-c27259de66f4  /api/user  POST  Bad Request
+2022-04-25	14:51:31	 b233f275-3af5-4bca-a7ef-d509c71a7ebd  /api/user  POST  Bad Request
+2022-04-25	14:51:32	 2cac28e2-f7d3-4255-9a64-b3a7309d3e1e  /api/user  POST  Bad Request
+2022-04-25	14:53:20	 ea19e233-3e1d-42b3-96b2-2c39eff33270  /api/user  POST  Bad Request
+2022-04-25	14:53:26	 a49c3c96-177c-4757-8f12-49772b0a4048  /api/user  POST  User or password is not correct format
+2022-04-25	14:56:23	 a4b9ced0-4ad3-4149-aca0-2181dc55c5c7  /api/user  POST  Internal Server Error
+2022-04-25	14:56:33	 3734f496-c594-4804-9f40-6f0483605a68  /api/user  POST  Internal Server Error
+2022-04-25	14:56:34	 9d35feb4-b385-492b-bf45-e0a6186e854a  /api/user  POST  Internal Server Error
+2022-04-25	14:56:54	 de55aa52-d1f6-438d-839d-b3d54ddca809  /api/user  POST  Internal Server Error
+2022-04-25	14:57:01	 57fcedc0-6536-4690-93d6-dcaaefe3cccd  /api/user  POST  Internal Server Error
+2022-04-25	14:57:07	 c3541d25-c7da-4032-97fe-fbb933ae6394  /api/user  POST  Internal Server Error
+2022-04-25	14:57:18	 d1ca973a-025a-4637-b1db-c94d1271fc4c  /api/user  POST  Internal Server Error
+2022-04-25	14:57:19	 99544c7f-4a55-4160-916d-7044cfdaa8f6  /api/user  POST  Internal Server Error
+2022-04-25	14:57:41	 97819c82-fefd-4b41-bbf2-1e33824e330b  /api/user  POST  Internal Server Error
+2022-04-25	14:57:42	 0bebdd21-0c7b-47fd-b9da-6f21ca985fef  /api/user  POST  Internal Server Error
+2022-04-25	14:58:32	 83a92c11-7047-4f5b-a429-a67dbcdeff47  /api/user  POST  Internal Server Error
+2022-04-25	14:59:24	 0e9930dd-c84a-4e2b-ad98-c4fcca49c0d4  /api/user  POST  Internal Server Error
+2022-04-25	14:59:45	 9d38afdd-973d-4ab1-95aa-76face2490a6  /api/user  POST  Internal Server Error
+2022-04-25	15:00:12	 fde230c5-5d9f-4f88-bc13-7b6d56e696a0  /api/user  POST  Internal Server Error
+2022-04-25	15:01:28	 056fc69b-70d4-41c1-96d3-42cf4712e3eb  /api/user  POST  Internal Server Error
+2022-04-25	15:03:34	 ba10b3ec-50cd-4dd4-a17b-e2b277d396cf  /api/user  POST  Internal Server Error
+2022-04-25	15:03:37	 bb7a1b55-803e-4ed3-af16-9e3a7295a487  /api/user  POST  Internal Server Error
+2022-04-25	15:03:45	 7757be4a-ac6e-41fc-b8ab-ee8b3e657ccb  /api/user  POST  Internal Server Error
+2022-04-25	15:06:52	 aa34d184-2574-4cf5-8368-cbb3784f0423  /api/user  POST  Internal Server Error
+2022-04-25	15:06:53	 48b7acdb-c7c2-42a2-9a01-39d0447cf01f  /api/user  POST  Internal Server Error
+2022-04-25	15:06:54	 528105b2-ec63-4c13-9c75-a8ec96941d04  /api/user  POST  Internal Server Error
+2022-04-25	15:06:56	 4167edd4-63e1-45a2-9072-b52061920c75  /api/user  POST  Internal Server Error
+2022-04-25	15:09:36	 409c1020-1b99-4386-bc02-0522e3e99399  /api/user  POST  Bad Request
+2022-04-25	15:10:16	 3454c6c2-d0c3-458d-a83a-9e7dc6fffb80  /api/user  POST  Bad Request
+2022-04-25	15:10:47	 dde71cc8-ac01-4bd1-afc3-3cf07182fe46  /api/user  POST  Username or password is not format
+2022-04-25	15:11:07	 349e4685-6a65-4090-9998-162db179cd44  /api/user  POST  Username or password is not format
+2022-04-25	15:15:24	 4047e64b-1b9e-4447-94ed-52853636c002  /api/user  POST  Username or password is not format
+2022-04-25	15:15:26	 9643f7d4-5738-4d2a-9b8e-8a811789caea  /api/user  POST  Username or password is not format
+2022-04-25	15:16:54	 351e035d-1288-4ec0-be5f-650301f53522  /api/user  POST  Internal Server Error
+2022-04-25	15:17:34	 62996d5e-7064-481b-9409-4a806a2010f5  /api/user  POST  Internal Server Error
+2022-04-25	15:18:11	 6cde6ce7-b4ca-4101-b5c1-a558ffb0e8b4  /api/user  POST  Internal Server Error
+2022-04-25	15:18:12	 f2236025-45b3-4441-a201-a7d103b29c94  /api/user  POST  Internal Server Error
+2022-04-25	15:25:52	 98ad54ca-e13e-48a1-ae5e-8e8093c25d52  /api/user  POST  Username or password is not format
+2022-04-25	15:29:21	 445856a5-a122-4026-a5e4-18cf0108d8f6  /api/user  POST  Username or password is not format
+2022-04-25	15:29:24	 571b5e4d-4351-4423-89bf-127cc7a63476  /api/user  POST  Username or password is not format
+2022-04-25	15:29:28	 b3ec19b8-3324-4255-97dc-fa8ce12a86c6  /api/user  POST  Username or password is not format
+2022-04-25	15:30:03	 99f873f8-1683-479d-9bd5-85d817d18eb6  /api/user  POST  ValidationError: "username" must be a valid email
+2022-04-25	15:30:15	 6cf0a277-aaeb-4200-8758-400962242b30  /api/user  POST  ValidationError: "username" must be a valid email
+2022-04-25	15:30:51	 b32e4586-5834-44ee-b598-e9f773dc541b  /api/user  POST  Bad Request
+2022-04-25	15:31:40	 033b8247-86f8-481d-9ec3-0b6747840db9  /api/user  POST  Bad Request
+2022-04-25	15:32:28	 7547c6a0-6d71-4485-be0b-2d2d8698deba  /api/user  POST  "username" must be a valid email
+2022-04-25	15:35:41	 bcb2cb80-ef6e-47d1-8719-0d3d1e920920  /api/user  POST  "username" must be a valid email
+2022-04-25	15:35:52	 00f0c5e5-9008-45b3-9077-5fed0d599cb0  /api/user  POST  Bad Request
+2022-04-25	15:36:44	 58b571a8-98d0-40ab-a165-6531c0f861c3  /api/user  POST  Bad Request
+2022-04-25	15:36:46	 375300df-01d9-4600-953e-d7e9f5b84c52  /api/user  POST  Bad Request
+2022-04-25	15:36:47	 8fb7df0e-f31e-42eb-b6fe-ea7ccdb73a5c  /api/user  POST  Bad Request
+2022-04-25	15:37:05	 6201d864-588d-4e9b-bd94-7a619f05f8f8  /api/user  POST  Bad Request
+2022-04-25	15:38:07	 a0ab8de6-233f-4fad-b6b1-4c8068bb629d  /api/user  POST  Bad Request
+2022-04-25	15:38:09	 9add0ad0-d94e-4d86-9c5a-0d38e2fff237  /api/user  POST  Bad Request
+2022-04-25	15:38:24	 d87e881c-ee1d-46d1-9b3d-dbb443070635  /api/user  POST  "username" with value "abccasdagmail.com" fails to match the required pattern: /@gmail.com$/
+2022-04-25	16:10:22	 232763ce-6178-4490-bac7-b17bb27fadb0  /api/user  POST  "username" with value "abccasdagmail.com" fails to match the required pattern: /@gmail.com$/
+2022-04-25	16:11:02	 924d1766-cd46-44c3-bead-03f82d39d551  /api/user  POST  Bad Request
+2022-04-25	16:11:13	 9d1cd3bd-9a03-462f-a31f-4720e9756fe3  /api/user  POST  Bad Request
+2022-04-25	16:11:55	 140252ef-a1ad-462f-bf73-8c22b3744d05  /api/user  POST  Bad Request
+2022-04-25	16:11:56	 3bc65b06-e347-460c-9b3c-f25b535beed9  /api/user  POST  Bad Request
+2022-04-25	16:12:38	 3ad406f3-9e9c-4837-9ff1-e962a0e4a521  /api/user  POST  Bad Request
+2022-04-25	16:12:40	 5a3b5814-ce0e-4764-b951-92f1e48d4cdd  /api/user  POST  Bad Request
+2022-04-25	16:15:18	 9dd06205-7c54-408d-a306-d6f8d08eb163  /api/user  POST  Bad Request
+2022-04-25	16:15:42	 e6423ef1-57b6-4021-ba07-3e5925f8cdc3  /api/user  POST  "password" is required
+2022-04-25	16:15:45	 e0cd121b-c345-49e8-bdb6-4dd8e54c83df  /api/user  POST  Bad Request
+2022-04-25	16:15:46	 68d2cea1-a81b-4b1d-bb30-e0058362af00  /api/user  POST  Bad Request
+2022-04-25	16:15:50	 904590b6-14f8-493e-98de-427667a4f2a3  /api/user  POST  Bad Request
+2022-04-25	16:15:52	 7e1ba113-7df5-4fd9-8499-354d6e0c195b  /api/user  POST  Bad Request
+2022-04-25	16:15:55	 9e73e823-79b0-4216-8bc6-b27327dc8d61  /api/user  POST  Bad Request
+2022-04-25	16:16:20	 dccc9fcc-eae9-4178-8c42-657ea2a7d020  /api/user  POST  User is exist
+2022-04-25	16:16:20	 dbb6edff-c5bc-4ef3-b4cc-4df91a40c77b  /api/user  POST  User is exist
+2022-04-25	16:20:01	 8a1fba2d-99b1-4f25-98df-e1a478f6caf8  /api/user  POST  Email is exist
+2022-04-25	16:20:10	 10d99fc2-c892-4d5b-99c6-96636d17c2cf  /api/user  POST  Email is exist
+2022-04-25	16:20:12	 92d09c2b-3ef6-49f8-ad13-2a424c709b78  /api/user  POST  Email is exist
+2022-04-25	16:20:55	 72841df9-bcb1-4202-9412-1bbef808a606  /api/user  POST  Email is exist
+2022-04-25	16:20:56	 f53db7da-4fef-490c-923b-bf3d9a0ff23c  /api/user  POST  Email is exist
+2022-04-25	16:20:58	 1e751eee-0921-4afa-9915-8dad55b12c62  /api/user  POST  Email is exist
+2022-04-25	16:21:07	 f5b62c69-119a-4a42-a6ea-8027b0266cd8  /api/user  POST  Email is exist
+2022-04-25	16:21:57	 c1d93a73-29d6-471d-976f-9bae8e290d50  /api/user  POST  Internal Server Error
+2022-04-25	16:22:00	 122ba3ed-346e-4c66-885c-ff1e57bd7b6c  /api/user  POST  Internal Server Error
+2022-04-25	16:24:22	 07dfe5e3-337a-471b-96d1-d36c642c3de9  /api/user  POST  Internal Server Error
+2022-04-25	16:24:30	 24809e1c-b0ca-4752-beb0-ebc9ea14d441  /api/user  POST  Internal Server Error
+2022-04-25	16:24:32	 1077c7a6-d46e-4d2a-94f0-005f0f2f8d45  /api/user  POST  Internal Server Error
+2022-04-25	16:24:58	 bfb42bdb-f873-48f2-bf63-d986b163041d  /api/user  POST  Bad Request
+2022-04-25	16:24:59	 f1ce7467-9a1f-4cc0-a587-2db6a2ec40c0  /api/user  POST  Bad Request
+2022-04-25	16:25:02	 8675fec3-c8c1-4919-a207-0afa379f1991  /api/user  POST  Internal Server Error
+2022-04-25	16:25:54	 ea71e671-cb2d-4ce5-a409-c69ce4fdbdef  /api/user  POST  Internal Server Error
+2022-04-25	16:25:55	 9f55ea0f-0369-459a-822c-d27a436edb0d  /api/user  POST  Internal Server Error
+2022-04-25	16:26:45	 27e76a29-fa9d-44aa-9ef9-f382e5fddca5  /api/user  POST  Internal Server Error
+2022-04-25	16:27:01	 df3d6ced-4513-459d-beb6-e2a77da37dd7  /api/user  POST  "username" with value "abccasd111dasd@gmail.co" fails to match the required pattern: /@gmail.com$/
+2022-04-25	16:27:05	 aa662991-21b2-4d18-b2a5-2d77426d7b33  /api/user  POST  Internal Server Error
+2022-04-25	16:28:00	 5eef8052-b86d-40ea-bffa-a1f2b408b91e  /api/user  POST  Email is exist
+2022-04-25	16:28:01	 5ee678a2-ecc4-4cae-9e6a-f353b20527be  /api/user  POST  Email is exist
+2022-04-25	16:28:19	 9bcb4538-d666-42cf-956a-6143e75818ad  /api/user  POST  Email is exist
+2022-04-25	16:28:20	 ecda309b-0d88-499a-906b-99493c98a6e2  /api/user  POST  Email is exist
+2022-04-25	16:28:28	 cc84535b-fee7-4803-800e-c94df4d22b55  /api/user  POST  Email is exist
+2022-04-25	16:28:39	 5074a94e-df7e-4c78-a5e7-ca4dc2d143d5  /api/user  POST  Email is exist
+2022-04-25	16:28:56	 f0c99ad6-beee-46d7-9fe1-2f70d3891c96  /api/user  POST  Email is exist
+2022-04-25	16:29:03	 c0419941-d1b5-4328-966d-3dd7cb9ec2f9  /api/user  POST  Email is exist
+2022-04-25	16:29:05	 94335a95-18d1-4bfe-a6b7-1e0fea77b6ed  /api/user  POST  Email is exist
+2022-04-25	16:29:13	 95d05b45-e200-4ff2-90bd-041ffbfd1fa5  /api/user  POST  Email is exist
+2022-04-25	16:30:39	 7cdb959f-5153-4d17-a32d-b459594f4e96  /api/user  POST  Email is exist
+2022-04-25	16:30:40	 12c3eb5a-06a2-49ef-89c7-f9a5fdb7bbb5  /api/user  POST  Email is exist
+2022-04-25	16:31:03	 a50df280-9c1e-4228-98c4-393ec0c24012  /api/user  POST  Email is exist
+2022-04-25	16:31:05	 2f006775-4f5d-4c2f-88cb-3ed768b92e33  /api/user  POST  Email is exist
+2022-04-25	16:31:06	 ec601f7a-9c07-45a3-ab95-6aca4281704c  /api/user  POST  Email is exist
+2022-04-25	16:31:07	 c9730a8e-2a99-4abe-bb8e-80822c24b60b  /api/user  POST  Email is exist
+2022-04-25	16:31:22	 46c47d2f-f9c7-41eb-aa29-f8e49e1f497e  /api/user  POST  Internal Server Error
+2022-04-25	16:31:57	 220de7bc-6714-44c7-b837-94419352987a  /api/user  POST  Email is exist
+2022-04-25	16:32:08	 b227fb18-8592-4f5d-b560-5e94fa96b6f4  /api/user  POST  Internal Server Error
+2022-04-25	16:33:04	 f2de4d40-232a-4fd7-beef-5234ef18ce9f  /api/user  POST  Internal Server Error
+2022-04-25	16:34:00	 73db2b95-1e7c-42be-863b-983d48453040  /api/user  POST  Email is exist
+2022-04-25	16:35:34	 9ce4e9a5-169f-41f4-92b6-33a355382ee6  /api/user  POST  Email is exist
+2022-04-25	16:35:35	 b7217c45-01df-4e63-99dd-84907f501c4c  /api/user  POST  Email is exist
+2022-04-25	16:35:37	 64892759-b02f-4a3a-8d99-52ecc6528c84  /api/user  POST  Email is exist
+2022-04-25	16:35:37	 552f683f-feec-4653-ad8a-62dcce6f23df  /api/user  POST  Email is exist
+2022-04-25	16:42:38	 78c4f262-9cc8-44f3-8b91-f70c5e266cb5  /api/user  POST  Internal Server Error
+2022-04-25	16:42:42	 a3dfbaf2-2d19-4565-bfc5-34c6e1e86571  /api/user  POST  Internal Server Error

@@ -1,5 +1,5 @@
 GET http://localhost:3000/api/allbooks/
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjY3NzIxNTk5ZDZmN2NkYjU3YWIxNmIiLCJpYXQiOjE2NTA5NTY4ODAsImV4cCI6MTY1MDk2MDQ4MH0.4AbRQuzK1wHjVNW4KCrP0cEuLnKx9rftYGkNMN7bGVE
 
 ###
 GET http://localhost:3000/api/authors

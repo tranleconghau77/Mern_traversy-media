@@ -137,3 +137,104 @@
 2022-04-25	16:35:37	 552f683f-feec-4653-ad8a-62dcce6f23df  /api/user  POST  Email is exist
 2022-04-25	16:42:38	 78c4f262-9cc8-44f3-8b91-f70c5e266cb5  /api/user  POST  Internal Server Error
 2022-04-25	16:42:42	 a3dfbaf2-2d19-4565-bfc5-34c6e1e86571  /api/user  POST  Internal Server Error
+2022-04-26	08:28:14	 0c682340-20ae-4afb-9505-f90c4f150409  /api/user  POST  Email is exist
+2022-04-26	08:28:16	 83307ae5-cef4-47f0-9fb2-6b6e5e544aab  /api/user  POST  Email is exist
+2022-04-26	08:28:19	 4d878c8d-327d-453d-9988-7c49a731f8bb  /api/user  POST  Email is exist
+2022-04-26	08:28:21	 7c776102-0002-44a4-bda3-0a3290fb8c6a  /api/user  POST  Email is exist
+2022-04-26	08:28:24	 a861c145-fc78-45d1-9216-7c9fe965ff25  /api/user  POST  Email is exist
+2022-04-26	08:30:22	 0c64e5cd-226f-4006-a744-ceb13867c7c6  /api/user  POST  Email is exist
+2022-04-26	08:31:14	 fdcaf821-34eb-485e-b069-b3c6c068eeb2  /api/user  POST  Email is exist
+2022-04-26	08:31:43	 a6eef893-4031-47ba-b006-249cc6588894  /api/user  POST  "password" is required
+2022-04-26	08:31:48	 85e435ff-d566-45a6-b06c-de307d1f5daa  /api/user  POST  Bad Request
+2022-04-26	08:31:50	 cd13d610-8487-48ff-9c80-56bbf3950dbc  /api/user  POST  Bad Request
+2022-04-26	08:31:54	 a91954a3-c6e3-49cb-8a61-14c326694248  /api/user  POST  Email is exist
+2022-04-26	08:31:56	 89da2308-43be-47b3-95a8-67a02e2aec6b  /api/user  POST  "password" is required
+2022-04-26	08:32:27	 31c45ae3-cf94-45c3-b6d3-a78d850d1e48  /api/user  POST  "username" is required
+2022-04-26	09:45:42	 2d716e5f-8470-4a18-8a79-33cbbc5dabcb  /api/user/login  POST  Internal Server Error
+2022-04-26	09:47:12	 dd22c5b3-4701-4089-9af1-d61876c71eda  /api/user/login  POST  Internal Server Error
+2022-04-26	09:48:14	 0dffd573-0156-4552-83d0-d6b1ef08946e  /api/user/login  POST  Internal Server Error
+2022-04-26	09:51:12	 99455df4-cad2-4ed3-9a30-0e016c895982  /api/user/login  POST  Internal Server Error
+2022-04-26	09:51:51	 b5f37880-c946-4b16-bd6d-c03d89d77268  /api/user/login  POST  Internal Server Error
+2022-04-26	09:51:52	 0d9a3ca1-e1ef-41c7-9c8f-9e8b1e6cd137  /api/user/login  POST  Internal Server Error
+2022-04-26	09:51:53	 00a9b8e7-da17-4f6f-a156-4b8e58c80ae6  /api/user/login  POST  Internal Server Error
+2022-04-26	09:52:50	 a2a93bc8-c159-4513-8472-96fbc084ed9d  /api/user/login  POST  Internal Server Error
+2022-04-26	09:53:31	 ba1e5e57-f81d-43de-936f-b4ca2b5cbbb8  /api/user/login  POST  Internal Server Error
+2022-04-26	09:53:33	 b129aac9-c7d6-4872-baa2-fdc2c696102f  /api/user/login  POST  Internal Server Error
+2022-04-26	09:53:34	 49f9efab-1bd9-4d41-880c-cba615c8365d  /api/user/login  POST  Internal Server Error
+2022-04-26	09:54:40	 3278fff7-3cfb-48fd-9c93-fd2f43b43e2e  /api/user/login  POST  Internal Server Error
+2022-04-26	09:54:40	 cc393a43-81d4-4c4b-a267-d2edcbfb7542  /api/user/login  POST  Internal Server Error
+2022-04-26	09:59:52	 1f5821da-e2d1-409a-9ba8-0d8369de2de1  /api/user/login  POST  Internal Server Error
+2022-04-26	10:00:08	 a110c2d8-c4c7-44ab-b57a-c5aa0d7a0faf  /api/user/login  POST  Internal Server Error
+2022-04-26	10:00:09	 fba856ee-8b46-48b0-8757-683ec307c7f7  /api/user/login  POST  Internal Server Error
+2022-04-26	10:00:16	 7c105d61-6b50-4893-9bcc-ab50d4cdb322  /api/user/login  POST  Internal Server Error
+2022-04-26	10:00:17	 8e04390d-1a18-47d3-a155-695d6818a864  /api/user/login  POST  Internal Server Error
+2022-04-26	10:00:28	 45a6a350-6481-4a8d-9d73-a127834981a7  /api/user/login  POST  Internal Server Error
+2022-04-26	10:01:05	 dd4b2578-a314-4b01-ac6b-10b4abb279b1  /api/user/login  POST  Internal Server Error
+2022-04-26	10:01:31	 cad52e3a-181e-4ff6-8a57-ae731964fb49  /api/user/login  POST  Unauthorized
+2022-04-26	10:02:10	 d0af9616-c1db-4a9d-9e2c-44f4698ed64c  /api/user/login  POST  Unauthorized
+2022-04-26	10:04:37	 b688e5bb-7d36-4981-97af-dfd06805fdfa  /api/user/login  POST  Internal Server Error
+2022-04-26	10:04:39	 90b0594c-f152-4d3b-846c-eb7b81c41d4b  /api/user/login  POST  Internal Server Error
+2022-04-26	10:05:32	 147a8bf7-deff-4c3b-af58-92c3280737ac  /api/user/login  POST  Internal Server Error
+2022-04-26	10:06:34	 ef022007-1493-4922-80e1-cbb4eb4c0b61  /api/user/login  POST  Internal Server Error
+2022-04-26	10:06:35	 be8df32c-7088-4f49-bff3-1a0ff008af3a  /api/user/login  POST  Internal Server Error
+2022-04-26	10:06:36	 17d23254-fd1e-4664-9215-cc116eccf7d4  /api/user/login  POST  Internal Server Error
+2022-04-26	10:09:33	 ec25f60a-e61e-460a-aee9-c7e5279e9aaa  /api/user/login  POST  Unauthorized
+2022-04-26	11:00:15	 0a35e1bb-b5ea-4da3-b017-34e14739e79f  /api/user/login  POST  Internal Server Error
+2022-04-26	11:00:17	 409747b5-ba32-4b3f-8c0f-e4938b9be11f  /api/user/login  POST  Internal Server Error
+2022-04-26	11:00:19	 c0149e61-2da9-4837-b494-cefbf15fabb0  /api/user/login  POST  Internal Server Error
+2022-04-26	11:01:02	 891aac03-2676-4d7f-8c7b-6ab4a51cda68  /api/user/login  POST  Internal Server Error
+2022-04-26	11:01:04	 ab3c273e-1e17-40d6-b8cc-4bc3093add8a  /api/user/login  POST  Internal Server Error
+2022-04-26	11:02:00	 ede87f20-dd91-4684-9356-85396625065d  /api/user/login  POST  Internal Server Error
+2022-04-26	11:02:16	 49e5a4e3-b032-4767-a906-cc2a7e3e9012  /api/user/login  POST  Internal Server Error
+2022-04-26	11:03:54	 f508e495-737f-4a51-8392-7d1803634b2e  /api/user/login  POST  Internal Server Error
+2022-04-26	11:03:56	 1f24f36a-f908-4ae9-b7f7-6b9b87863812  /api/user/login  POST  Internal Server Error
+2022-04-26	11:03:57	 ce5fe216-2ec4-416f-a032-7af1846c66fc  /api/user/login  POST  Internal Server Error
+2022-04-26	11:10:02	 3347117d-cde1-4920-97f5-6000dd96010f  /api/user/login  POST  Internal Server Error
+2022-04-26	11:10:04	 db270386-fb06-40ee-902c-ad5d66c93ad4  /api/user/login  POST  Internal Server Error
+2022-04-26	11:10:50	 27a35efb-6ece-4909-befc-5db40641f3c7  /api/user/login  POST  Internal Server Error
+2022-04-26	11:10:52	 537293a4-5501-43f7-965f-081330de7139  /api/user/login  POST  Internal Server Error
+2022-04-26	11:12:48	 3402b1b6-f083-4281-890b-eed0235b890c  /api/user/login  POST  Internal Server Error
+2022-04-26	11:12:55	 27010574-0941-4e79-8115-69e5dd1bc8b8  /api/user/login  POST  Internal Server Error
+2022-04-26	11:13:22	 12a15033-cede-4996-9d2c-e8769444ae06  /api/user/login  POST  Internal Server Error
+2022-04-26	11:13:32	 2ea3e159-caf4-4f8b-bed3-bce127f79513  /api/user/login  POST  Internal Server Error
+2022-04-26	11:14:11	 77e82cf6-f191-4f1c-8ecf-a0af70198904  /api/user/login  POST  Internal Server Error
+2022-04-26	11:14:13	 9f1bf370-5a6c-4fe3-8b57-5163956cedeb  /api/user/login  POST  Internal Server Error
+2022-04-26	11:14:54	 516fe0e1-5661-45d6-aa26-1dd2720b5286  /api/user/login  POST  Unauthorized
+2022-04-26	11:14:56	 d076b14f-603a-4278-b26c-6216a9cbf376  /api/user/login  POST  Unauthorized
+2022-04-26	11:14:57	 584f35d5-2097-4edb-962c-494fde6c6c27  /api/user/login  POST  Unauthorized
+2022-04-26	11:14:59	 24135441-d830-416f-8e92-6a50fea74f21  /api/user/login  POST  Unauthorized
+2022-04-26	11:15:01	 5e8e23d5-73eb-4027-a549-07ccfd051a10  /api/user/login  POST  Unauthorized
+2022-04-26	11:15:02	 31ec9216-6143-41e3-a437-a0e1c6bc3330  /api/user/login  POST  Unauthorized
+2022-04-26	11:15:20	 f8dbd31c-1a88-43bd-aea7-6450209a5c31  /api/user/login  POST  Internal Server Error
+2022-04-26	11:16:02	 4a22e966-4da7-4498-b3de-d990fd775d71  /api/user  POST  "username" with value "hautran" fails to match the required pattern: /@gmail.com$/
+2022-04-26	11:16:11	 92c49c09-daf8-4867-9615-ebf4bf580668  /api/user  POST  "password" length must be at least 6 characters long
+2022-04-26	11:16:38	 cdcd6393-28e1-400c-8f16-9b82a0ee5ad6  /api/user/login  POST  Internal Server Error
+2022-04-26	11:17:52	 b50e5a0b-ffac-40bb-a192-ffb880bc3e4c  /api/user/login  POST  Internal Server Error
+2022-04-26	11:17:54	 26aea5fc-7076-4039-902a-9804abf289fc  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:46	 956a972c-9dd3-421f-8a38-4fb75d195d72  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:48	 9a51b922-41f0-4511-8fd9-77466a7b2d98  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:49	 536f484d-e872-42c2-a98f-ef0316f8e994  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:50	 34986bde-faf0-476f-b8dc-40e1d2fa4ad7  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:51	 b044ec3d-102a-4640-9bc4-673d2e0e5dff  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:52	 d0d3ad29-82e2-46af-b297-9a9ec63d6133  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:53	 669035a0-f00d-4689-a497-501064d5447c  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:54	 3f33ea26-d796-4454-87c5-265f2b939619  /api/user/login  POST  Internal Server Error
+2022-04-26	13:56:55	 c19a73a0-e0d7-4336-a4d2-f87d3d6c2b1a  /api/user/login  POST  Internal Server Error
+2022-04-26	14:07:52	 af032c59-33e7-42a7-9157-d2e6564900cc  /api/user  POST  Email is exist
+2022-04-26	14:27:13	 539c0b76-7636-43f0-8a29-30e67b499a7d  /api/allbooks  GET  Unauthorized
+2022-04-26	14:27:15	 be6ae4f0-429d-4136-90fc-55bb2e589207  /api/allbooks  GET  Unauthorized
+2022-04-26	14:27:32	 f475b557-8e31-473d-a45e-99f7d608526f  /api/allbooks  GET  Unauthorized
+2022-04-26	14:27:33	 a6342371-c61d-42c0-bb5c-e3f47d8fa41f  /api/allbooks  GET  Unauthorized
+2022-04-26	14:27:34	 842d9f31-39ad-43ab-996d-4ba253c26d05  /api/allbooks  GET  Unauthorized
+2022-04-26	14:27:40	 fc064502-2649-464e-be09-2bc090578717  /api/allbooks  GET  Unauthorized
+2022-04-26	14:27:51	 4b616db1-9ad3-4ca9-96ca-d7638b8f2978  /api/allbooks  GET  Unauthorized
+2022-04-26	14:28:28	 f3e34663-b19b-47a7-928e-b949bee5de81  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:19	 57f474dc-ab73-4e28-a990-9c8e1603d503  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:19	 60bca2fb-4b2c-406d-a09a-7d35ec18b125  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:20	 023db5dd-49aa-4dd5-a712-aa71f2d05d6f  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:21	 e2ff9f72-a0e0-407c-ba2c-f4d0a8fc36b5  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:21	 44bf6b7f-8d41-4ed3-9a77-55e1e57e1e31  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:22	 cf3f5635-5533-44b7-9809-82a0a3d3b640  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:22	 2d00ae62-e3ae-46f7-9957-0704605eb0af  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:24	 ddc8807f-e94c-4939-b1bf-b418175c06f1  /api/allbooks  GET  Unauthorized
+2022-04-26	14:38:24	 6fdba170-36ba-48ca-9438-b4136ccbeb29  /api/allbooks  GET  Unauthorized

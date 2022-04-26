@@ -5,7 +5,8 @@ const userValidate = (data) => {
     username: Joi.string()
       .pattern(new RegExp("@gmail.com$"))
       .lowercase()
-      .email(),
+      .email()
+      .required(),
     password: Joi.string().min(6).max(18).required(),
   });
   return userSchema.validate(data);

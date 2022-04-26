@@ -1,4 +1,5 @@
 const User = require("../model/userModel");
+const { signAccessToken } = require("../helpers/jwt_services");
 const { userValidate } = require("../helpers/validation");
 const createError = require("http-errors");
 
@@ -125,22 +126,50 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
-// @desc    delete user
-// @route   DELETE /user/:id
+// @desc    login user
+// @route   POST /user/login
 // @access  private
 const login = async (req, res, next) => {
-  res.status(200).json("login");
+  try {
+    const { username, password } = req.body;
+    const { error } = userValidate(req.body);
+
+    if (error) {
+      return next(createError.BadRequest(`${error.details[0].message}`));
+    }
+
+    if (!username || !password) {
+      return next(createError.BadRequest("Bad Request"));
+    }
+
+    const user = await User.findOne({ username });
+    if (!user) {
+      return next(createError.BadRequest("Bad Request"));
+    }
+    const compare = await user.isCheckPassword(password);
+
+    if (!compare) {
+      return next(createError.Unauthorized("Unauthorized"));
+    }
+
+    console.log(user._id);
+    const accessToken = await signAccessToken(user._id);
+
+    res.status(200).json({ accessToken });
+  } catch (error) {
+    return next(createError.InternalServerError("Internal Server Error"));
+  }
 };
 
-// @desc    delete user
-// @route   DELETE /user/:id
+// @desc    post user
+// @route   POST /user/logout
 // @access  private
 const logout = async (req, res, next) => {
   res.status(200).json("logout");
 };
 
-// @desc    delete user
-// @route   DELETE /user/:id
+// @desc    refresh token user
+// @route   POST /use/refresh-token
 // @access  private
 const refreshTokenUser = async (req, res, next) => {
   res.status(200).json("refresh token");

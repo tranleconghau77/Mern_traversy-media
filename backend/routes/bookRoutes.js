@@ -1,5 +1,7 @@
 const express = require("express");
-const filter = require("../features/filter");
+
+const { verifyAccessToken } = require("../helpers/jwt_services");
+
 const {
   getFilterBooks,
   getAllBooks,
@@ -15,7 +17,7 @@ bookRoute.get("/book/:id", getBook);
 
 bookRoute.get("/books", getFilterBooks);
 
-bookRoute.get("/allbooks", getAllBooks);
+bookRoute.get("/allbooks", verifyAccessToken, getAllBooks);
 
 bookRoute.post("/book", postBook);
 

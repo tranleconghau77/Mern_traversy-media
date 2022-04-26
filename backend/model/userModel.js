@@ -9,21 +9,29 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true],
+    required: [true, "Please type username"],
   },
 });
 
 userSchema.pre("save", async function (next) {
   try {
     let pass = this.password;
-    const salt = await bcrypt.genSaltSync(10);
-    const hash = await bcrypt.hashSync(pass, salt);
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(pass, salt);
     this.password = hash;
     next();
   } catch (error) {
     next(error);
   }
 });
+
+userSchema.methods.isCheckPassword = async function (password) {
+  try {
+    return await bcrypt.compare(password, this.password);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const User = mongoose.model("User", userSchema);
 

@@ -22,10 +22,10 @@ userRoute.put("/user/:id", putUser);
 
 userRoute.delete("/user/:id", deleteUser);
 
-userRoute.post("/refresh-token", refreshTokenUser);
+userRoute.post("user/refresh-token", refreshTokenUser);
 
-userRoute.post("/login", login);
+userRoute.post("/user/login", login);
 
-userRoute.post("/logout", logout);
+userRoute.post("/user/logout", logout);
 
 module.exports = userRoute;

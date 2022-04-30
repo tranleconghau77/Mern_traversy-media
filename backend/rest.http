@@ -1,5 +1,5 @@
 GET http://localhost:3000/api/allbooks/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjY3NzIxNTk5ZDZmN2NkYjU3YWIxNmIiLCJpYXQiOjE2NTA5NTY4ODAsImV4cCI6MTY1MDk2MDQ4MH0.4AbRQuzK1wHjVNW4KCrP0cEuLnKx9rftYGkNMN7bGVE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjY4YTc0NzRmOWE3MjljZTI0MmRmYTQiLCJpYXQiOjE2NTEwNzY2NTUsImV4cCI6MTY1MTA4MDI1NX0.sgg4dWL9RrjksnFDNWz8xSrOBFvsX_d4zVJ9C7rFejI
 
 ###
 GET http://localhost:3000/api/authors
@@ -9,13 +9,32 @@ DELETE  http://localhost:3000/api/author
 
 
 ###
-POST http://localhost:3000/api/author
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
 
+{
+    "username":"hautlc19@gmail.com",
+    "password":"Tranleconghau77"
+}
+
+###
+POST  http://localhost:3000/api/user/logout
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjY4YTc0NzRmOWE3MjljZTI0MmRmYTQiLCJpYXQiOjE2NTEwNDgyMzUsImV4cCI6MTY4MjYwNTgzNX0.Eztb69aFZGD7kQPvtSw3ZvB13pY3gZz0CI2bcVHwwcw"
+}
 
 
 ###
 GET http://localhost:3000/api/allbooks/abc
 
 
+###
+POST http://localhost:3000/api/user/refresh-token
+Content-Type: application/json
 
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjY4YTc0NzRmOWE3MjljZTI0MmRmYTQiLCJpYXQiOjE2NTEwNDc4NTYsImV4cCI6MTY4MjYwNTQ1Nn0.7EZAXA-fvkF3v0jhS367loyTBPQJ7U9K2tWkELQk5RY"
+}
 

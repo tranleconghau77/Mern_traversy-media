@@ -1,7 +1,9 @@
 const createError = require("http-errors");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const dotenv = require("dotenv").config();
 const { v4: uuidv4 } = require("uuid");
+const client = require("./config/redis_connect");
 
 const bookRoutes = require("./routes/bookRoutes");
 const authorRoutes = require("./routes/authorRoutes");
@@ -9,13 +11,14 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const userRoutes = require("./routes/userRoutes");
 const logEvents = require("./helpers/logEvent");
 
-const connectDb = require("./config/db");
+const connectDb = require("./config/mongo_connect");
 
 const express = require("express");
 
 const port = process.env.PORT || 5000;
 
 connectDb();
+
 const app = express();
 
 // parse application/x-www-form-urlencoded
@@ -24,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+app.use(cors());
 app.use("/api", bookRoutes);
 app.use("/api", authorRoutes);
 app.use("/api", categoryRoutes);

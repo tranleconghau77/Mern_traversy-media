@@ -3,19 +3,25 @@ const express = require("express");
 const { verifyAccessToken } = require("../helpers/jwt_services");
 
 const {
-  getFilterBooks,
+  postFilterBooks,
   getAllBooks,
   getBook,
   deleteBook,
   updateBook,
+  getAuthors,
   postBook,
+  getCategories,
 } = require("../controllers/bookController");
 
 const bookRoute = express.Router();
 
 bookRoute.get("/book/:id", getBook);
 
-bookRoute.get("/books", getFilterBooks);
+bookRoute.post("/searchbooks", postFilterBooks);
+
+bookRoute.get("/authors", getAuthors);
+
+bookRoute.get("/categories", getCategories);
 
 bookRoute.get("/allbooks", verifyAccessToken, getAllBooks);
 

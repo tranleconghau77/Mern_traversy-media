@@ -1,7 +1,13 @@
 const User = require("../model/userModel");
-const { signAccessToken } = require("../helpers/jwt_services");
+const {
+  signAccessToken,
+  signRefreshToken,
+  verifyAccessRefreshToken,
+} = require("../helpers/jwt_services");
+
 const { userValidate } = require("../helpers/validation");
 const createError = require("http-errors");
+const client = require("../config/redis_connect");
 
 // @desc    get user
 // @route   GET /user/:id
@@ -152,27 +158,58 @@ const login = async (req, res, next) => {
       return next(createError.Unauthorized("Unauthorized"));
     }
 
-    console.log(user._id);
+    //JWT sign Token and Refresh Token
     const accessToken = await signAccessToken(user._id);
+    const accessRefreshToken = await signRefreshToken(user._id);
 
-    res.status(200).json({ accessToken });
+    // console.log(accessToken);
+
+    res.status(200).json({ accessToken, accessRefreshToken });
   } catch (error) {
     return next(createError.InternalServerError("Internal Server Error"));
   }
 };
 
-// @desc    post user
-// @route   POST /user/logout
+// @desc    logout user
+// @route   DELETE /user/logout
 // @access  private
 const logout = async (req, res, next) => {
-  res.status(200).json("logout");
+  try {
+    const { refreshToken } = req.body;
+    if (!refreshToken) {
+      return next(createError.BadRequest("Bad Request"));
+    }
+    console.log(refreshToken);
+    const { userId } = await verifyAccessRefreshToken(refreshToken);
+
+    console.log(userId);
+    client.del(userId.toString(), (err, reply) => {
+      if (err)
+        return next(createError.InternalServerError("Internal Server Error"));
+    });
+    res.status(200).json({ msg: "Logout" });
+  } catch (error) {
+    return next(createError.InternalServerError("Internal Server Error"));
+  }
 };
 
 // @desc    refresh token user
 // @route   POST /use/refresh-token
 // @access  private
 const refreshTokenUser = async (req, res, next) => {
-  res.status(200).json("refresh token");
+  try {
+    const { refreshToken } = req.body;
+    if (!refreshToken) {
+      return next(createError.BadRequest("Bad Request"));
+    }
+
+    const { userId } = await verifyAccessRefreshToken(refreshToken);
+    const accessToken = await signAccessToken(userId);
+    const refreToken = await signRefreshToken(userId);
+    res.status(200).json({ accessToken, refreToken });
+  } catch (error) {
+    return next(createError.Unauthorized("Unauthorized"));
+  }
 };
 
 module.exports = {

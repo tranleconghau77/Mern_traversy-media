@@ -22,7 +22,7 @@ userRoute.put("/user/:id", putUser);
 
 userRoute.delete("/user/:id", deleteUser);
 
-userRoute.post("user/refresh-token", refreshTokenUser);
+userRoute.post("/user/refresh-token", refreshTokenUser);
 
 userRoute.post("/user/login", login);
 

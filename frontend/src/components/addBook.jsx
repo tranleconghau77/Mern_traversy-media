@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axiosInstance from "../utils/axiosInstance";
+import { useNavigate } from "react-router-dom";
 
 const AddBook = (props) => {
   let { handleAddBook, handleEditForm } = props;
@@ -82,6 +83,13 @@ const AddBook = (props) => {
           <input
             className="form-control"
             type="text"
+            name="name_book"
+            onChange={(event) => handleNameChange(event)}
+            required="required"
+          />
+          <input
+            className="form-control"
+            type="file"
             name="name_book"
             onChange={(event) => handleNameChange(event)}
             required="required"

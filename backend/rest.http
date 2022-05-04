@@ -9,14 +9,21 @@ DELETE  http://localhost:3000/api/author
 
 
 ###
-POST http://localhost:3000/api/user/login
+POST http://localhost:5000/api/user
 Content-Type: application/json
 
-{
-    "username":"hautlc19@gmail.com",
+{   "gmail":"hau12345@gmail.com",
+    "username":"Hau Tran",
     "password":"Tranleconghau77"
 }
 
+###
+POST http://localhost:5000/api/user/login
+Content-Type: application/json
+
+{   "gmail":"hau12345@gmail.com",
+    "password":"Tranleconghau77"
+}
 ###
 POST  http://localhost:3000/api/user/logout
 Content-Type: application/json

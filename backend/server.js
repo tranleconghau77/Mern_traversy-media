@@ -1,6 +1,7 @@
 const createError = require("http-errors");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv").config();
 const { v4: uuidv4 } = require("uuid");
 const client = require("./config/redis_connect");
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+app.use(cookieParser());
 app.use(cors());
 app.use("/api", bookRoutes);
 app.use("/api", authorRoutes);
@@ -39,7 +41,7 @@ app.use((req, res, next) =>
 
 app.use((err, req, res, next) => {
   logEvents(`${uuidv4()}  ${req.url}  ${req.method}  ${err.message}`);
-  res.json({
+  return res.json({
     status: err.status,
     message: err.status + " " + err.message,
     link: {

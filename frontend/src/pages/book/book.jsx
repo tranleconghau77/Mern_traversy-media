@@ -16,7 +16,7 @@ const Book = () => {
   useEffect(() => {
     axiosInstance
       .get("/allbooks")
-      .then((res) => setBooks(res.data.books))
+      .then((res) => setBooks([...res.data.books]))
       .catch((e) => console.log(e));
   }, []);
 
@@ -60,6 +60,8 @@ const Book = () => {
       .catch((e) => console.log(e));
   };
 
+  const handleLogoutClick = (event) => {};
+
   const handleEditItem = (id, stateEdit) => {};
   const handleEditForm = (id, stateEdit) => {};
 
@@ -68,9 +70,15 @@ const Book = () => {
       <Row>
         <div className="clearfix ">
           <div className="form-inline pull-left">
-            <button className="btn btn-success" ng-click="addUser()">
-              <span className="glyphicon glyphicon-plus"> </span>Add more user
+            <button className="btn btn-success m-3">
+              <span className="glyphicon glyphicon-plus">Add more user </span>
             </button>
+            <Button
+              className="btn btn-success m-3"
+              onClick={(event) => handleLogoutClick(event)}
+            >
+              <span className="glyphicon glyphicon-plus">Log out</span>
+            </Button>
           </div>
           <div className="form-inline pull-right">
             Search by name:
@@ -101,13 +109,13 @@ const Book = () => {
             </tr>
           </thead>
           <tbody className="text-center">
-            {books.length !== 0 &&
-              books.map((value, index) => (
+            {books?.length !== 0 &&
+              books?.map((value, index) => (
                 <BookDetail
                   handleDelete={handleDelete}
                   value={value}
                   key={index}
-                  handleEditItem={handleEditItem}
+                  handleEditItemP={handleEditItem}
                 />
               ))}
           </tbody>

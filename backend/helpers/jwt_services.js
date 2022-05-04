@@ -3,10 +3,17 @@ const createError = require("http-errors");
 const client = require("../config/redis_connect");
 
 //Access Token
-const signAccessToken = async (userId) => {
+const signAccessToken = async (data) => {
+  // console.log(data);
+
+  const { id, role, password, gmail, username } = data;
   return new Promise((resolve, reject) => {
     const payload = {
-      userId,
+      id,
+      username,
+      password,
+      role,
+      gmail,
     };
 
     const secret = process.env.ACCESS_TOKEN_SECRET;
@@ -24,17 +31,19 @@ const signAccessToken = async (userId) => {
 
 const verifyAccessToken = (req, res, next) => {
   if (!req.headers["authorization"]) {
-    return next(createError.Unauthorized("Unauthorized"));
+    next(createError.Unauthorized("Unauthorized"));
   }
 
   const authHeader = req.headers["authorization"];
   const bearToken = authHeader.split(" ");
   const token = bearToken[1];
-
+  if (!token) {
+    next(createError.Unauthorized("Unauthorized"));
+  }
   //start verify token
   JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
     if (err) {
-      return next(createError.Unauthorized(`${err.message}`));
+      next(createError.Unauthorized(`${err.message}`));
     }
     req.payload = payload;
     next();
@@ -42,10 +51,15 @@ const verifyAccessToken = (req, res, next) => {
 };
 
 //Access Refresh Token
-const signRefreshToken = async (userId) => {
+const signRefreshToken = async (data) => {
+  const { id, role, password, gmail, username } = data;
   return new Promise((resolve, reject) => {
     const payload = {
-      userId,
+      id,
+      role,
+      gmail,
+      username,
+      password,
     };
 
     const secret = process.env.ACCESS_REFRESHTOKEN_SECRET;
@@ -57,7 +71,7 @@ const signRefreshToken = async (userId) => {
     JWT.sign(payload, secret, options, (err, token) => {
       if (err) reject(err);
       client.set(
-        userId.toString(),
+        `${id.toString()}`,
         token,
         "EX",
         365 * 24 * 60 * 60,
@@ -78,11 +92,14 @@ const verifyAccessRefreshToken = async (refreshToken) => {
       if (err) {
         return reject(createError.Unauthorized(`${err}`));
       }
-      client.get(payload.userId, (err, reply) => {
+
+      client.get(payload.id, (err, reply) => {
         if (err) {
           return reject(createError.Unauthorized(`${err}`));
         }
+
         if (reply === refreshToken) {
+          console.log(payload);
           resolve(payload);
         }
         return reject(createError.Unauthorized("Unvalid token"));

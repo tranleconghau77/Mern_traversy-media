@@ -19,20 +19,17 @@ const getBook = async (req, res, next) => {
 // @access  private
 const getAllBooks = async (req, res, next) => {
   try {
-    client.get("books", (err, reply) => {
-      if (err)
-        return next(createError.InternalServerError("Internal Server Error"));
-
-      if (reply !== null) {
-        res.status(200).send({
+    await client.get("books", (err, reply) => {
+      if (reply) {
+        return res.send({
           books: JSON.parse(reply),
         });
       }
+      if (err) returcreateError.InternalServerError("Internal Server Error");
     });
-
     let books = await Book.find();
     if (!books) {
-      next(createError.InternalServerError());
+      return next(createError.InternalServerError());
     }
     client.setex("books", 365 * 24 * 60 * 60, JSON.stringify(books));
     res.status(200).send({
@@ -59,7 +56,7 @@ const postFilterBooks = async (req, res, next) => {
         },
         "-_id"
       ).exec();
-      res.status(200).json(data);
+      return res.status(200).json(data);
     }
 
     if (category) {
@@ -69,29 +66,29 @@ const postFilterBooks = async (req, res, next) => {
         },
         "-_id"
       ).exec();
-      res.status(200).json(data);
+      return res.status(200).json(data);
     }
 
     if (vote) {
       data = await Book.find({
         vote: Number(vote),
       }).exec();
-      res.status(200).json(data);
+      return res.status(200).json(data);
     }
 
     if (author) {
       data = await Book.find({
         author: author,
       }).exec();
-      res.status(200).json(data);
+      return res.status(200).json(data);
     }
 
     if (data.length === 0) {
-      res.status(400).json({ msg: "Not found" });
+      return res.status(400).json({ msg: "Not found" });
     }
-    res.status(200).json(data);
+    return res.status(200).json(data);
   } catch (error) {
-    return createError.InternalServerError("Internal Server Error");
+    next(createError.InternalServerError("Internal Server Error"));
   }
 };
 
@@ -122,14 +119,13 @@ const postBook = async (req, res, next) => {
 // @route   DELETE /book/:id
 // @access  private
 const deleteBook = async (req, res, next) => {
-  // console.log(req.params.id);
   try {
     const book = await Book.findById(req.params.id);
     if (!book) {
       next(createError.BadRequest());
     }
     await book.remove();
-    res.status(200).json(book);
+    return res.status(200).json(book);
   } catch (error) {
     next(createError.InternalServerError());
   }
@@ -168,7 +164,7 @@ const getAuthors = async (req, res, next) => {
     );
     res.status(200).json(authors);
   } catch (error) {
-    return next(createError.InternalServerError("Internal Server Error"));
+    next(createError.InternalServerError("Internal Server Error"));
   }
 };
 
@@ -182,7 +178,7 @@ const getCategories = async (req, res, next) => {
 
     res.status(200).json(categories);
   } catch (error) {
-    return next(createError.InternalServerError("Internal Server Error"));
+    next(createError.InternalServerError("Internal Server Error"));
   }
 };
 

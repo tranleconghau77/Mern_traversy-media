@@ -5,10 +5,12 @@ const userRoute = express.Router();
 const {
   getUser,
   getUsers,
+
   postUser,
   putUser,
   deleteUser,
   login,
+  postUserFirebase,
   logout,
   refreshTokenUser,
 } = require("../controllers/userController");
@@ -28,4 +30,6 @@ userRoute.post("/user/login", login);
 
 userRoute.post("/user/logout", logout);
 
+//test firebase
+userRoute.post("/userfirebase", postUserFirebase);
 module.exports = userRoute;

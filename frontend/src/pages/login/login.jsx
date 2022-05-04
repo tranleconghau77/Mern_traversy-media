@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
@@ -9,6 +10,7 @@ import "./login.css";
 
 const Login = () => {
   const [value, setValue] = useState([]);
+  const [error, setError] = useState([]);
 
   const handleOnChangeUsername = (event) => {
     setValue({
@@ -30,13 +32,18 @@ const Login = () => {
         username: value.username,
         password: value.password,
       })
-      .then((res) =>
+      .then((res) => {
+        if (res.data.status !== 200) {
+          setError(res.data.message);
+        }
         localStorage.setItem(
           "accessToken",
           JSON.stringify(res.data.accessToken)
-        )
-      )
-      .catch((e) => console(e));
+        );
+      })
+      .catch((e) => {
+        setError(e);
+      });
   };
 
   return (
@@ -67,6 +74,7 @@ const Login = () => {
                 placeholder="Password"
               />
             </div>
+            <p>{error}</p>
             <button
               className="button login__submit"
               onClick={(event) => handleLogin(event)}

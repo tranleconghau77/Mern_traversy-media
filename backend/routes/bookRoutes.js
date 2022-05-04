@@ -16,20 +16,20 @@ const {
 
 const bookRoute = express.Router();
 
-bookRoute.get("/book/:id", getBook);
+bookRoute.get("/book/:id", verifyAccessToken, getBook);
 
-bookRoute.post("/searchbooks", postFilterBooks);
+bookRoute.post("/searchbooks", verifyAccessToken, postFilterBooks);
 
-bookRoute.get("/authors", getAuthors);
+bookRoute.get("/authors", verifyAccessToken, getAuthors);
 
-bookRoute.get("/categories", getCategories);
+bookRoute.get("/categories", verifyAccessToken, getCategories);
 
 bookRoute.get("/allbooks", verifyAccessToken, getAllBooks);
 
-bookRoute.post("/book", postBook);
+bookRoute.post("/book", verifyAccessToken, postBook);
 
-bookRoute.delete("/book/:id", deleteBook);
+bookRoute.delete("/book/:id", verifyAccessToken, deleteBook);
 
-bookRoute.put("/book/:id", updateBook);
+bookRoute.put("/book/:id", verifyAccessToken, updateBook);
 
 module.exports = bookRoute;

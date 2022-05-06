@@ -2,7 +2,7 @@ const Joi = require("joi");
 
 const userValidate = (data) => {
   const userSchema = Joi.object({
-    username: Joi.string(),
+    username: Joi.string().pattern(new RegExp("^[a-zA-Z0-9]{3,30}$")),
     gmail: Joi.string()
       .pattern(new RegExp("@gmail.com$"))
       .lowercase()

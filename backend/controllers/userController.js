@@ -48,22 +48,26 @@ const getUsers = async (req, res, next) => {
 // @desc    post
 // @route   POST /user
 // @access  private
-const postUser = async (req, res, next) => {
+const registerUser = async (req, res, next) => {
   try {
+    if (req.body && Object.keys(req.body).length === 0) {
+      next(createError.BadRequest("Content is empty"));
+    }
+
     const { username, gmail, password } = req.body;
 
     const { error } = userValidate(req.body);
     if (error) {
-      return next(createError.BadRequest(`${error.details[0].message}`));
+      next(createError.BadRequest(`${error.details[0].message}`));
     }
 
     if (!username || !password || !gmail) {
-      return next(createError.BadRequest("Bad Request"));
+      next(createError.BadRequest("Bad Request"));
     }
 
     const isExistUser = await User.find({ gmail });
     if (isExistUser.length !== 0) {
-      return next(createError.BadRequest("Email is exist"));
+      next(createError.BadRequest("Email is exist"));
     }
 
     const newUser = await User.create({
@@ -140,6 +144,9 @@ const deleteUser = async (req, res, next) => {
 // @access  private
 const login = async (req, res, next) => {
   try {
+    if (req.body && Object.keys(req.body).length === 0) {
+      next(createError.BadRequest("Content is empty"));
+    }
     const { gmail, password } = req.body;
     if (!gmail || !password) {
       next(createError.BadRequest("Bad Request"));
@@ -251,7 +258,7 @@ module.exports = {
   getUser,
   getUsers,
   putUser,
-  postUser,
+  registerUser,
   deleteUser,
   login,
   logout,

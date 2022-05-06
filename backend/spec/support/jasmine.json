@@ -1,7 +1,7 @@
 {
   "spec_dir": "tests",
 
-  "spec_files": ["**/*[sS]pec.?(m)js", "!**/*nospec.js"],
+  "spec_files": ["**/api/**/*[sS]pec.?(m)js", "!**/*nospec.js"],
 
   "helpers": ["helpers/**/*.?(m)js"],
 

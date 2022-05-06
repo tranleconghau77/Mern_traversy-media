@@ -7,7 +7,7 @@ const userRoute = express.Router();
 const {
   getUser,
   getUsers,
-  postUser,
+  registerUser,
   putUser,
   deleteUser,
   login,
@@ -19,7 +19,7 @@ userRoute.get("/user/:id", verifyAccessToken, getUser);
 
 userRoute.get("/users", verifyAccessToken, authUser, getUsers);
 
-userRoute.post("/user", verifyAccessToken, postUser);
+userRoute.post("/user", registerUser);
 
 userRoute.put("/user/:id", verifyAccessToken, putUser);
 

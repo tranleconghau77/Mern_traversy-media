@@ -534,3 +534,33 @@
 2022-05-06	16:11:58	 b1212446-0787-4492-989a-7b852a50f7bc  /api/user  POST  "gmail" is not allowed to be empty
 2022-05-06	16:11:58	 e703aa8a-22e9-4e53-969c-b0f0352acaa4  /api/user  POST  "gmail" with value "h.com" fails to match the required pattern: /@gmail.com$/
 2022-05-06	16:11:58	 20c7e985-57fa-4f14-9938-581418a218d1  /api/user  POST  Email is exist
+2022-05-06	16:29:25	 8baf4f0f-2473-4739-87d4-d50ae6b52a95  /api/user/login  POST  Content is empty
+2022-05-06	16:29:25	 efb6013b-093e-411a-a8b2-ef3eff5820e8  /api/user/login  POST  Bad Request
+2022-05-06	16:29:25	 27e740d8-9dea-44ff-8003-bed8cc643807  /api/user/login  POST  Bad Request
+2022-05-06	16:29:25	 4828d31d-ae25-4046-91b5-40fdbb24013b  /api/user/login  POST  Unauthorized
+2022-05-06	16:29:26	 846c497e-177c-42b1-bfd1-47c4286c2586  /api/user  POST  Content is empty
+2022-05-06	16:29:26	 06841122-fafe-4de3-8ab9-b7a97ee83058  /api/user  POST  "username" is not allowed to be empty
+2022-05-06	16:29:26	 0dba731d-3766-48cd-b4d4-3cc41fda569b  /api/user  POST  "username" with value "aaaaa__" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/
+2022-05-06	16:29:26	 2a98afdb-2ab5-42a5-9b3c-08219b9c31fa  /api/user  POST  "gmail" is not allowed to be empty
+2022-05-06	16:29:26	 4ca15f0f-48d2-43e0-8630-34e96d9e830e  /api/user  POST  "gmail" with value "h.com" fails to match the required pattern: /@gmail.com$/
+2022-05-06	16:29:26	 c94da24e-c5cb-4532-b2a1-5a4955e45e50  /api/user  POST  Email is exist
+2022-05-08	13:31:15	 5bf179a6-30ea-4fdf-b8e1-1d8b66aaff18  /api/user/login  POST  Content is empty
+2022-05-08	13:31:15	 8dae9efe-cb0b-4ba0-bb19-37e2ce16fca6  /api/user/login  POST  Bad Request
+2022-05-08	13:31:15	 f93e5fbc-49a1-4afb-9f87-a87f23eaf3b0  /api/user/login  POST  Bad Request
+2022-05-08	13:31:15	 4bc0c23d-96a9-4b66-acc3-9bd1977eeeb9  /api/user/login  POST  Unauthorized
+2022-05-08	13:31:15	 5346ed25-790b-4ccc-9208-7ae0580310ec  /api/user  POST  Content is empty
+2022-05-08	13:31:15	 5f40741f-f6d0-4595-b091-7b41982789ec  /api/user  POST  "username" is not allowed to be empty
+2022-05-08	13:31:15	 a4932f5f-320a-4fa8-bdf4-a036723beeea  /api/user  POST  "username" with value "aaaaa__" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/
+2022-05-08	13:31:15	 88a8a450-4ce8-4023-9d5c-be73bc0f85ac  /api/user  POST  "gmail" is not allowed to be empty
+2022-05-08	13:31:15	 9d88b1ad-b05a-4fe3-aa47-b48d275aa9cf  /api/user  POST  "gmail" with value "h.com" fails to match the required pattern: /@gmail.com$/
+2022-05-08	13:31:15	 d2f8363e-4db7-41de-a988-f90eb98f4bf4  /api/user  POST  Email is exist
+2022-05-08	13:42:09	 9c548114-dc6b-403b-9844-15a52adfc0b7  /api/user/login  POST  Content is empty
+2022-05-08	13:42:09	 6853a5c1-5528-49e7-9dff-03f42781257f  /api/user/login  POST  Bad Request
+2022-05-08	13:42:09	 79f9bb07-bbe7-4400-b529-1699d64944e8  /api/user/login  POST  Bad Request
+2022-05-08	13:42:10	 61ee1051-324e-430c-b8fa-5f346e58e239  /api/user/login  POST  Unauthorized
+2022-05-08	13:42:10	 697f9ee0-bbf1-4386-bd90-d0c18260fdfe  /api/user  POST  Content is empty
+2022-05-08	13:42:10	 cb6afd55-ba98-429c-838d-993326d1ec4c  /api/user  POST  "username" is not allowed to be empty
+2022-05-08	13:42:10	 5cb745d7-24ee-4433-8728-017a4cb1e839  /api/user  POST  "username" with value "aaaaa__" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/
+2022-05-08	13:42:10	 ab2c1a14-567f-4717-a353-f5095da24594  /api/user  POST  "gmail" is not allowed to be empty
+2022-05-08	13:42:10	 0aad34a7-4683-48ee-9732-0c2133b51e75  /api/user  POST  "gmail" with value "h.com" fails to match the required pattern: /@gmail.com$/
+2022-05-08	13:42:10	 c98c1bc5-4ea4-4cdb-abb6-02c2aef74ed5  /api/user  POST  Email is exist

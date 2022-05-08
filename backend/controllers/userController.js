@@ -149,7 +149,7 @@ const login = async (req, res, next) => {
     }
     const { gmail, password } = req.body;
     if (!gmail || !password) {
-      next(createError.BadRequest("Bad Request"));
+      return next(createError.BadRequest("Bad Request"));
     }
 
     const user = await User.findOne({ gmail });

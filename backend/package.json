@@ -28,6 +28,7 @@
     "mongoose": "^6.2.11",
     "redis": "^3.1.2",
     "request": "^2.88.2",
+    "sinon": "^14.0.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

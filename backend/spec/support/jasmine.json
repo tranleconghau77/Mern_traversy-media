@@ -1,9 +1,13 @@
 {
   "spec_dir": "tests",
 
-  "spec_files": ["**/api/**/*[sS]pec.?(m)js", "!**/*nospec.js"],
+  "spec_files": [
+    "!**/api/user/*[sS]pec.js",
+    "!**/*nospec.js",
+    "**/api/book/*[sS]pec.js"
+  ],
 
-  "helpers": ["helpers/**/*.?(m)js"],
+  "helpers": ["helpers/**/*.js"],
 
   "env": {
     "failSpecWithNoExpectations": false,

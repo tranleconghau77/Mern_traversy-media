@@ -5,7 +5,7 @@ const createError = require("http-errors");
 // @desc    get a book detail
 // @route   GET /book/:id
 // @access  private
-const getBook = async (req, res, next) => {
+exports.getBook = async (req, res, next) => {
   try {
     let book = await Book.findById(req.params.id);
     res.status(200).json(book);
@@ -17,7 +17,7 @@ const getBook = async (req, res, next) => {
 // @desc    get allbooks
 // @route   GET /allbooks
 // @access  private
-const getAllBooks = async (req, res, next) => {
+exports.getAllBooks = async (req, res, next) => {
   try {
     await client.get("books", (err, reply) => {
       if (reply) {
@@ -44,7 +44,7 @@ const getAllBooks = async (req, res, next) => {
 // @desc    get filter  searchbooks
 // @route   GET /searchbooks
 // @access  private
-const postFilterBooks = async (req, res, next) => {
+exports.postFilterBooks = async (req, res, next) => {
   try {
     let { name_book, vote, category, author } = { ...req.body };
 
@@ -95,7 +95,7 @@ const postFilterBooks = async (req, res, next) => {
 // @desc    post book
 // @route   POST /book
 // @access  private
-const postBook = async (req, res, next) => {
+exports.postBook = async (req, res, next) => {
   try {
     if (!req.body) {
       next(createError.BadRequest());
@@ -118,7 +118,7 @@ const postBook = async (req, res, next) => {
 // @desc    delete book
 // @route   DELETE /book/:id
 // @access  private
-const deleteBook = async (req, res, next) => {
+exports.deleteBook = async (req, res, next) => {
   try {
     const book = await Book.findById(req.params.id);
     if (!book) {
@@ -134,7 +134,7 @@ const deleteBook = async (req, res, next) => {
 // @desc    update book
 // @route   UPDATE /book/:id
 // @access  private
-const updateBook = async (req, res, next) => {
+exports.updateBook = async (req, res, next) => {
   try {
     if (!req.params.id) {
       next(createError.BadRequest());
@@ -155,7 +155,7 @@ const updateBook = async (req, res, next) => {
   }
 };
 
-const getAuthors = async (req, res, next) => {
+exports.getAuthors = async (req, res, next) => {
   try {
     let authors = await Book.find({}, "author -_id");
     authors = authors.filter(
@@ -168,7 +168,7 @@ const getAuthors = async (req, res, next) => {
   }
 };
 
-const getCategories = async (req, res, next) => {
+exports.getCategories = async (req, res, next) => {
   try {
     let categories = await Book.find({}, "category  ");
     categories = categories.filter(
@@ -182,13 +182,13 @@ const getCategories = async (req, res, next) => {
   }
 };
 
-module.exports = {
-  postFilterBooks,
-  getAllBooks,
-  getBook,
-  deleteBook,
-  updateBook,
-  postBook,
-  getAuthors,
-  getCategories,
-};
+// module.exports = {
+//   postFilterBooks,
+//   getAllBooks,
+//   getBook,
+//   deleteBook,
+//   updateBook,
+//   postBook,
+//   getAuthors,
+//   getCategories,
+// };

@@ -1,5 +1,6 @@
 const { addDoc, collection, getFirestore } = require("firebase/firestore");
 const User = require("../model/userModel");
+const book = require("./bookController");
 
 const {
   signAccessToken,
@@ -162,6 +163,8 @@ const login = async (req, res, next) => {
     if (compare === false) {
       next(createError.Unauthorized("Unauthorized"));
     }
+
+    console.log(book);
     //JWT sign Token and Refresh Token
     const accessToken = await signAccessToken(user);
 

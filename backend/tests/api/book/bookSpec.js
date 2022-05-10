@@ -1,38 +1,44 @@
-// import sinon from "sinon";
-// describe("TEST Book features",function(){
-//   it("Get /allbooks ", function () {
-//     // create a fake that returns the text "foo"
-//     const fake = sinon.fake.returns("foo");
-//     expect(fake(),"foo");
-//   });
-// })
-
-// const book = require("../../../controllers/bookController");
-// import sinon from "sinon";
-// import request from "request";
-// import { response } from "express";
-
-const book = require("../../../controllers/bookController");
 const sinon = require("sinon");
+const request = require("request");
+const book = require("../../../controllers/bookController");
+const client = require("../../../config/redis_connect");
 
 describe("test book controllers", function () {
-  it("get all books", function () {
-    try {
-      // const BookStub = sinon
-      //   .stub(book, "getAllBooks")
-      //   .callsFake(async function (req, res, next) {
-      //     return "All books";
-      //   });
-
-      sinon
-        .stub(book, "getAllBooks")
-        .callsFake(async function (req, res, next) {
-          return "bar";
+  let data;
+  beforeEach(function () {
+    data = { data: "redis" };
+    sinon.stub(book, "getAllBooks").callsFake(async (req, res, next) => {
+      try {
+        await client.get("books", (err, reply) => {
+          if (reply) {
+            return "redis";
+          }
+          if (err) return err;
         });
 
-      assert.equals(book.getAllBooks, "bar");
-    } catch (error) {
-      console.log(error);
-    }
+        await client.setex("books", 36000, JSON.stringify(data));
+        return "mongo";
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
+  afterEach(function () {
+    sinon.restore(); // Unwraps the spy
+  });
+  it("return true if data from mongo", function () {
+    req = {};
+    res = {};
+    next = () => {};
+    book
+      .getAllBooks(req, res, next)
+      .then((data) => {
+        if (data == "mongo") {
+          expect(data).toEqual("mongo");
+        } else {
+          expect(data).toEqual("redis");
+        }
+      })
+      .catch((e) => console.log(e));
   });
 });

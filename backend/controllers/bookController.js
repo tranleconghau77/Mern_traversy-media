@@ -19,14 +19,16 @@ exports.getBook = async (req, res, next) => {
 // @access  private
 exports.getAllBooks = async (req, res, next) => {
   try {
-    await client.get("books", (err, reply) => {
+    const value = await client.get("books", (err, reply) => {
       if (reply) {
-        return res.send({
-          books: JSON.parse(reply),
-        });
+        // return res.send({
+        //   books: JSON.parse(reply),
+        // });
+        return JSON.parse(reply);
       }
-      if (err) returcreateError.InternalServerError("Internal Server Error");
+      if (err) createError.InternalServerError("Internal Server Error");
     });
+    console.log(value);
     let books = await Book.find();
     if (!books) {
       return next(createError.InternalServerError());

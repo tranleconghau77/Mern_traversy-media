@@ -574,3 +574,5 @@
 2022-05-10	10:15:28	 316f8df0-8e99-453a-8ce4-6252265bb03d  /api/user  POST  "gmail" is not allowed to be empty
 2022-05-10	10:15:28	 fe329292-ce13-4463-a488-7e37e8f025ec  /api/user  POST  "gmail" with value "h.com" fails to match the required pattern: /@gmail.com$/
 2022-05-10	10:15:28	 629527e2-89b4-48a4-bd1f-63fc78b0d186  /api/user  POST  Email is exist
+2022-05-10	17:32:17	 251cf43c-7d62-41ce-8c3e-204e75b4a359  /api/allbooks  GET  Internal Server Error
+2022-05-10	17:32:21	 b395024e-2c43-4746-90b6-b89c5761323e  /api/allbooks  GET  Internal Server Error

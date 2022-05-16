@@ -52,23 +52,23 @@ const getUsers = async (req, res, next) => {
 const registerUser = async (req, res, next) => {
   try {
     if (req.body && Object.keys(req.body).length === 0) {
-      next(createError.BadRequest("Content is empty"));
+      return next(createError.BadRequest("Content is empty"));
     }
 
     const { username, gmail, password } = req.body;
 
     const { error } = userValidate(req.body);
     if (error) {
-      next(createError.BadRequest(`${error.details[0].message}`));
+      return next(createError.BadRequest(`${error.details[0].message}`));
     }
 
     if (!username || !password || !gmail) {
-      next(createError.BadRequest("Bad Request"));
+      return next(createError.BadRequest("Bad Request"));
     }
 
     const isExistUser = await User.find({ gmail });
     if (isExistUser.length !== 0) {
-      next(createError.BadRequest("Email is exist"));
+      return next(createError.BadRequest("Email is exist"));
     }
 
     const newUser = await User.create({
@@ -163,8 +163,6 @@ const login = async (req, res, next) => {
     if (compare === false) {
       next(createError.Unauthorized("Unauthorized"));
     }
-
-    console.log(book);
     //JWT sign Token and Refresh Token
     const accessToken = await signAccessToken(user);
 

@@ -8,9 +8,9 @@ const createError = require("http-errors");
 exports.getBook = async (req, res, next) => {
   try {
     let book = await Book.findById(req.params.id);
-    res.status(200).json(book);
+    res.json(book);
   } catch (error) {
-    next(createError.InternalServerError());
+    return next(createError.InternalServerError());
   }
 };
 
@@ -19,27 +19,28 @@ exports.getBook = async (req, res, next) => {
 // @access  private
 exports.getAllBooks = async (req, res, next) => {
   try {
-    const value = await client.get("books", (err, reply) => {
+    await client.get("books", async (err, reply) => {
       if (reply) {
-        // return res.send({
-        //   books: JSON.parse(reply),
-        // });
-        return JSON.parse(reply);
+        return await res.json({
+          books: JSON.parse(reply),
+        });
       }
-      if (err) createError.InternalServerError("Internal Server Error");
-    });
-    console.log(value);
-    let books = await Book.find();
-    if (!books) {
-      return next(createError.InternalServerError());
-    }
-    client.setex("books", 365 * 24 * 60 * 60, JSON.stringify(books));
-    res.status(200).send({
-      books,
-      message: "from mongo",
+      if (err) console.log(err);
+      else {
+        let books = await Book.find();
+        if (!books) {
+          return next(createError.InternalServerError());
+        } else {
+          client.setex("books", 365 * 24 * 60 * 60, JSON.stringify(books));
+          res.json({
+            books,
+            message: "from mongo",
+          });
+        }
+      }
     });
   } catch (error) {
-    next(createError.InternalServerError());
+    return next(createError.InternalServerError());
   }
 };
 
@@ -82,7 +83,7 @@ exports.postFilterBooks = async (req, res, next) => {
       data = await Book.find({
         author: author,
       }).exec();
-      return res.status(200).json(data);
+      return res.json(data);
     }
 
     if (data.length === 0) {

@@ -38,12 +38,12 @@ const verifyAccessToken = (req, res, next) => {
   const bearToken = authHeader.split(" ");
   const token = bearToken[1];
   if (!token) {
-    next(createError.Unauthorized("Unauthorized"));
+    return next(createError.Unauthorized("Unauthorized"));
   }
   //start verify token
   JWT.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, payload) => {
     if (err) {
-      next(createError.Unauthorized(`${err.message}`));
+      return next(createError.Unauthorized("JWT expired"));
     }
     req.payload = payload;
     next();
@@ -107,6 +107,7 @@ const verifyAccessRefreshToken = async (refreshToken) => {
     });
   });
 };
+
 module.exports = {
   signAccessToken,
   verifyAccessToken,

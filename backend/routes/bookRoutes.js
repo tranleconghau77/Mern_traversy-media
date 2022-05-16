@@ -1,5 +1,5 @@
 const express = require("express");
-const isExistAccessToken = require("../middlwares/checkLogin");
+const { authAdmin } = require("../middlwares/authorization");
 
 const { verifyAccessToken } = require("../helpers/jwt_services");
 
@@ -14,6 +14,8 @@ const {
   getCategories,
 } = require("../controllers/bookController");
 
+//Only admin accesses function POST, DELETE,PUT
+
 const bookRoute = express.Router();
 
 bookRoute.get("/book/:id", verifyAccessToken, getBook);
@@ -26,10 +28,10 @@ bookRoute.get("/categories", verifyAccessToken, getCategories);
 
 bookRoute.get("/allbooks", verifyAccessToken, getAllBooks);
 
-bookRoute.post("/book", verifyAccessToken, postBook);
+bookRoute.post("/book", verifyAccessToken, authAdmin, postBook);
 
-bookRoute.delete("/book/:id", verifyAccessToken, deleteBook);
+bookRoute.delete("/book/:id", verifyAccessToken, authAdmin, deleteBook);
 
-bookRoute.put("/book/:id", verifyAccessToken, updateBook);
+bookRoute.put("/book/:id", verifyAccessToken, authAdmin, updateBook);
 
 module.exports = bookRoute;

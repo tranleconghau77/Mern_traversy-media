@@ -1,5 +1,4 @@
 const express = require("express");
-const { authAdmin, authUser } = require("../middlwares/authorization");
 const { verifyAccessToken } = require("../helpers/jwt_services");
 
 const userRoute = express.Router();
@@ -17,7 +16,7 @@ const {
 } = require("../controllers/userController");
 userRoute.get("/user/:id", verifyAccessToken, getUser);
 
-userRoute.get("/users", verifyAccessToken, authUser, getUsers);
+userRoute.get("/users", verifyAccessToken, getUsers);
 
 userRoute.post("/user", registerUser);
 

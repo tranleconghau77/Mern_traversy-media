@@ -34,26 +34,41 @@ describe("test book controllers", function () {
   });
 
   it("return true if get all books successfully", async function () {
-    sinon.stub(book, "getAllBooks").callsFake(async function () {
-      try {
-        await client.get("dataRedis", (err, reply) => {
+    // sinon.stub(book, "getAllBooks").callsFake(async function () {
+    //   try {
+    //     await client.get("dataRedis", (err, reply) => {
+    //       if (reply) {
+    //         expect(JSON.parse(reply)).toEqual(dataRedis);
+    //         return;
+    //       }
+    //       if (err) {
+    //         expect("err").toEqual("err");
+    //         return;
+    //       } else {
+    //         expect(monogoData).toEqual(dataRedis);
+    //         return;
+    //       }
+    //     });
+    //     await client.set("dataRedis", JSON.stringify(dataRedis));
+    //     return true;
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    //});
+
+    sinon.stub(book, "getAllBooks").callsFake(function () {
+      return new Promise((resolve, reject) => {
+        client.get("dataRedis", (err, reply) => {
           if (reply) {
             expect(JSON.parse(reply)).toEqual(dataRedis);
-            return;
-          }
-          if (err) {
-            expect("err").toEqual("err");
-            return;
+            resolve(true);
           } else {
             expect(monogoData).toEqual(dataRedis);
-            return;
+            resolve(true);
           }
         });
-        await client.set("dataRedis", JSON.stringify(dataRedis));
-        return true;
-      } catch (error) {
-        console.log(error);
-      }
+        client.set("dataRedis", JSON.stringify(dataRedis));
+      });
     });
     expect(
       book
@@ -92,6 +107,9 @@ describe("test book controllers", function () {
   it("return true if add a book successfully", function () {
     try {
       let req = {};
+      let res = {};
+      let next = {};
+
       req.body = {
         _id: 1,
         name_book: "abc",
